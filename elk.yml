@@ -1,0 +1,50 @@
+---
+
+- name: Ansible Copy files Local to Remote
+  hosts: centos.my
+  tasks:
+
+    - name: copying elasicsearch with playbook
+      become: true
+      copy:
+        src: /files/elasticsearch-8.7.0-x86_64.rpm
+        dest: /home/nikita
+        owner: nikita
+        group: nikita
+        mode: 0777
+    - name: Install elasticsearch
+      become: true
+      command: rpm -i /home/nikita/elasticsearch-8.7.0-x86_64.rpm
+    - name: copying kibana with playbook
+      become: true
+      copy:
+        src: /files/kibana-8.7.0-x86_64.rpm
+        dest: /home/nikita
+        owner: nikita
+        group: nikita
+        mode: 0777
+    - name: Install kibana
+      become: true
+      command: rpm -i /home/nikita/kibana-8.7.0-x86_64.rpm
+    - name: copying logstash with playbook
+      become: true
+      copy:
+        src: /files/logstash-8.7.0-x86_64.rpm
+        dest: /home/nikita
+        owner: nikita
+        group: nikita
+        mode: 0777
+    - name: Install logstash
+      become: true
+      command: rpm -i /home/nikita/logstash-8.7.0-x86_64.rpm
+    - name: copying filebeat with playbook
+      become: true
+      copy:
+        src: /files/filebeat-8.7.0-x86_64.rpm
+        dest: /home/nikita
+        owner: nikita
+        group: nikita
+        mode: 0777
+    - name: Install filebeat
+      become: true
+      command: rpm -i /home/nikita/filebeat-8.7.0-x86_64.rpm

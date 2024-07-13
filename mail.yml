@@ -1,0 +1,31 @@
+---
+
+- hosts: ubuntu.my
+  become: yes
+  tasks:
+
+  -  name: Install postfix on Ubuntu
+     apt:
+        name=postfix
+        state=latest
+  -  name: Install dovecot-core on Ubuntu
+     apt:
+        name=dovecot-core
+        state=latest
+  -  name: Install dovecot-imapd on Ubuntu
+     apt:
+        name=dovecot-imapd
+        state=latest
+  -  name: Install dovecot-pop3d on Ubuntu
+     apt:
+        name=dovecot-pop3d
+        state=latest
+  -  name: Install dovecot-lmtpd on Ubuntu
+     apt:
+        name=dovecot-lmtpd
+        state=latest
+  -  name: Install roundcube on Ubuntu
+     apt:
+        name=roundcube
+        state=latest
+

@@ -1,0 +1,9 @@
+---
+
+- hosts: centos.my
+  become: yes
+  tasks:
+  -  name: Install zabbix-agent on RedHat Family
+     yum:
+        name=zabbix-agent
+        state=latest

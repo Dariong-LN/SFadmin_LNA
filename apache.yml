@@ -1,0 +1,9 @@
+---
+
+- hosts: ubuntu.my
+  become: yes
+  tasks:
+  -  name: Install apache on Ubuntu
+     apt:
+        name=apache2
+        state=latest

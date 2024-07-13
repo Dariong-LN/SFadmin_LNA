@@ -1,0 +1,10 @@
+---
+
+- hosts: ubuntu.my
+  become: yes
+  tasks:
+
+  -  name: Install nginx on Ubuntu
+     apt:
+        name=nginx
+        state=latest

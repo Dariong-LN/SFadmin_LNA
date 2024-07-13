@@ -1,0 +1,10 @@
+---
+
+- hosts: ubuntu.my
+  become: yes
+  tasks:
+
+  -  name: Install bind9 on Ubuntu
+     apt:
+        name=bind9       
+        state=latest

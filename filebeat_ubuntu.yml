@@ -1,0 +1,19 @@
+---
+
+- name: Copy and install filebeat
+  hosts: ubuntu.my
+  tasks:
+
+    - name: copying filebeat with playbook
+      become: true
+      copy:
+        src: /files/filebeat-8.7.0-amd64.deb
+        dest: /home/nikita
+        owner: nikita
+        group: nikita
+
+    - name: Install filebeat
+      become: true
+      apt:
+          deb=/home/nikita/filebeat-8.7.0-amd64.deb
+          state=present
